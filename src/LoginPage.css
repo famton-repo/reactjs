@@ -1,0 +1,470 @@
+/* ── Layout ──────────────────────────────────────────── */
+.lp-root {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glowing orbs */
+.lp-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.lp-orb--1 {
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.45), transparent 70%);
+    top: -120px;
+    left: -120px;
+    animation: float1 8s ease-in-out infinite;
+}
+
+.lp-orb--2 {
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.3), transparent 70%);
+    bottom: -100px;
+    right: -80px;
+    animation: float2 10s ease-in-out infinite;
+}
+
+@keyframes float1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(30px, 40px) scale(1.05);
+    }
+}
+
+@keyframes float2 {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-25px, -30px) scale(1.08);
+    }
+}
+
+/* ── Card ────────────────────────────────────────────── */
+.lp-card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1.5rem;
+    padding: 2.5rem 2.25rem;
+    box-shadow:
+        0 0 0 1px rgba(167, 139, 250, 0.08),
+        0 32px 64px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    animation: cardIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes cardIn {
+    from {
+        opacity: 0;
+        transform: translateY(28px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ── Brand ───────────────────────────────────────────── */
+.lp-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+}
+
+.lp-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, rgba(124, 58, 237, 0.35), rgba(167, 139, 250, 0.15));
+    border-radius: 10px;
+    border: 1px solid rgba(167, 139, 250, 0.3);
+}
+
+.lp-brand-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #c4b5fd, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ── Heading ─────────────────────────────────────────── */
+.lp-title {
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #f1f5f9;
+    margin-bottom: 0.35rem;
+}
+
+.lp-subtitle {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    margin-bottom: 1.75rem;
+}
+
+/* ── Form ────────────────────────────────────────────── */
+.lp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.lp-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.lp-label {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #cbd5e1;
+    letter-spacing: 0.01em;
+}
+
+.lp-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lp-forgot {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-family: inherit;
+    color: #a78bfa;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.lp-forgot:hover {
+    color: #c4b5fd;
+}
+
+/* ── Input ───────────────────────────────────────────── */
+.lp-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.lp-input-icon {
+    position: absolute;
+    left: 0.9rem;
+    color: #64748b;
+    display: flex;
+    pointer-events: none;
+    transition: color 0.2s;
+}
+
+.lp-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.65rem;
+    padding: 0.75rem 1rem 0.75rem 2.6rem;
+    color: #f1f5f9;
+    font-size: 0.9rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.22s, box-shadow 0.22s, background 0.22s;
+}
+
+.lp-input::placeholder {
+    color: #475569;
+}
+
+.lp-input:focus {
+    border-color: #7c3aed;
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+}
+
+.lp-input:focus~.lp-input-icon,
+.lp-input-wrap:focus-within .lp-input-icon {
+    color: #a78bfa;
+}
+
+.lp-field--error .lp-input {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.lp-eye {
+    position: absolute;
+    right: 0.9rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #64748b;
+    display: flex;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.lp-eye:hover {
+    color: #a78bfa;
+}
+
+.lp-error {
+    font-size: 0.78rem;
+    color: #f87171;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.lp-error::before {
+    content: "✕ ";
+}
+
+/* ── Remember ────────────────────────────────────────── */
+.lp-remember {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.lp-checkbox {
+    display: none;
+}
+
+.lp-check-box {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    flex-shrink: 0;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.lp-checkbox:checked+.lp-check-box {
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
+    border-color: transparent;
+}
+
+.lp-checkbox:checked+.lp-check-box::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1.5px;
+    width: 6px;
+    height: 10px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+    transform: rotate(40deg);
+}
+
+.lp-check-label {
+    font-size: 0.83rem;
+    color: #94a3b8;
+}
+
+/* ── Button ──────────────────────────────────────────── */
+.lp-btn {
+    margin-top: 0.25rem;
+    width: 100%;
+    padding: 0.85rem;
+    border: none;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, #7c3aed, #9333ea);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform 0.18s, box-shadow 0.18s, opacity 0.18s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4);
+    letter-spacing: 0.01em;
+}
+
+.lp-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(124, 58, 237, 0.55);
+}
+
+.lp-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.lp-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Spinner */
+.lp-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2.5px solid rgba(255, 255, 255, 0.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ── Divider ─────────────────────────────────────────── */
+.lp-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.35rem 0 1.1rem;
+    color: #475569;
+    font-size: 0.8rem;
+}
+
+.lp-divider::before,
+.lp-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* ── Social ──────────────────────────────────────────── */
+.lp-social {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.35rem;
+}
+
+.lp-social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem;
+    border-radius: 0.65rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.18s;
+}
+
+.lp-social-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+/* ── Sign-up link ────────────────────────────────────── */
+.lp-signup {
+    text-align: center;
+    font-size: 0.83rem;
+    color: #64748b;
+}
+
+.lp-signup-link {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 600;
+    color: #a78bfa;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.lp-signup-link:hover {
+    color: #c4b5fd;
+}
+
+/* ── Success State ───────────────────────────────────── */
+.lp-success {
+    text-align: center;
+    padding: 1rem 0;
+    animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.lp-success-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7c3aed, #a78bfa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: #fff;
+    margin: 0 auto 1.25rem;
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.5);
+}
+
+.lp-success-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 0.4rem;
+}
+
+.lp-success-sub {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
