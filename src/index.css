@@ -1,0 +1,46 @@
+/* ── Reset & Base ────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --clr-bg-1: #0f0c29;
+  --clr-bg-2: #302b63;
+  --clr-bg-3: #24243e;
+  --clr-accent: #a78bfa;
+  --clr-accent-2: #7c3aed;
+  --clr-accent-glow: rgba(167, 139, 250, 0.35);
+  --clr-surface: rgba(255, 255, 255, 0.05);
+  --clr-surface-hover: rgba(255, 255, 255, 0.09);
+  --clr-border: rgba(255, 255, 255, 0.12);
+  --clr-text: #f1f5f9;
+  --clr-muted: #94a3b8;
+  --clr-error: #f87171;
+  --radius-lg: 1.5rem;
+  --radius-md: 0.75rem;
+  --transition: 0.25s ease;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, var(--clr-bg-1), var(--clr-bg-2), var(--clr-bg-3));
+  background-attachment: fixed;
+  color: var(--clr-text);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* ── Utility (used in components) ───────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
