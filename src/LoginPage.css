@@ -1,0 +1,502 @@
+/* ===========================
+   Login Page — Premium Dark UI
+   =========================== */
+
+/* ---------- Wrapper ---------- */
+.lp-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0a0b0f;
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem;
+}
+
+/* Glowing background orbs */
+.lp-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.35;
+    pointer-events: none;
+    animation: lp-float 8s ease-in-out infinite alternate;
+}
+
+.lp-orb--1 {
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, #6366f1, #312e81);
+    top: -120px;
+    left: -120px;
+}
+
+.lp-orb--2 {
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, #a855f7, #4c1d95);
+    bottom: -100px;
+    right: -100px;
+    animation-delay: 4s;
+}
+
+@keyframes lp-float {
+    from {
+        transform: translate(0, 0) scale(1);
+    }
+
+    to {
+        transform: translate(30px, 20px) scale(1.08);
+    }
+}
+
+/* ---------- Card ---------- */
+.lp-card {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 440px;
+    background: rgba(15, 16, 24, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2.5rem 2.25rem;
+    backdrop-filter: blur(24px);
+    box-shadow:
+        0 0 0 1px rgba(99, 102, 241, 0.12),
+        0 24px 64px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    animation: lp-card-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes lp-card-in {
+    from {
+        opacity: 0;
+        transform: translateY(28px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ---------- Brand ---------- */
+.lp-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 1.75rem;
+}
+
+.lp-logo {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+}
+
+.lp-brand-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+}
+
+/* ---------- Headings ---------- */
+.lp-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f1f1f5;
+    letter-spacing: -0.03em;
+    line-height: 1.25;
+    margin-bottom: 0.4rem;
+}
+
+.lp-subtitle {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1.75rem;
+}
+
+/* ---------- Form ---------- */
+.lp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.lp-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.lp-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lp-label {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #d1d5db;
+}
+
+.lp-forgot {
+    font-size: 0.78rem;
+    color: #818cf8;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.lp-forgot:hover {
+    color: #a5b4fc;
+}
+
+/* ---------- Input ---------- */
+.lp-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.lp-input-icon {
+    position: absolute;
+    left: 0.875rem;
+    display: flex;
+    align-items: center;
+    color: #9ca3af;
+    pointer-events: none;
+}
+
+.lp-input-icon svg {
+    width: 17px;
+    height: 17px;
+}
+
+.lp-input {
+    width: 100%;
+    padding: 0.7rem 2.5rem 0.7rem 2.75rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #f9fafb;
+    font-size: 0.875rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    caret-color: #818cf8;
+}
+
+.lp-input::placeholder {
+    color: #4b5563;
+}
+
+.lp-input:focus {
+    border-color: #6366f1;
+    background: rgba(99, 102, 241, 0.06);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+}
+
+/* Show/hide password button */
+.lp-toggle-pw {
+    position: absolute;
+    right: 0.875rem;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.lp-toggle-pw:hover {
+    color: #d1d5db;
+}
+
+.lp-toggle-pw svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ---------- Remember me ---------- */
+.lp-remember {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.lp-checkbox {
+    display: none;
+}
+
+.lp-checkmark {
+    width: 17px;
+    height: 17px;
+    border-radius: 5px;
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.04);
+    flex-shrink: 0;
+    transition: background 0.2s, border-color 0.2s;
+    position: relative;
+}
+
+.lp-checkbox:checked+.lp-checkmark {
+    background: #6366f1;
+    border-color: #6366f1;
+}
+
+.lp-checkbox:checked+.lp-checkmark::after {
+    content: '';
+    position: absolute;
+    top: 2.5px;
+    left: 4.5px;
+    width: 5px;
+    height: 8px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+}
+
+.lp-remember-text {
+    font-size: 0.8125rem;
+    color: #9ca3af;
+}
+
+/* ---------- Error ---------- */
+.lp-error {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.08);
+    border: 1px solid rgba(248, 113, 113, 0.2);
+    border-radius: 8px;
+    padding: 0.6rem 0.875rem;
+    animation: lp-shake 0.35s ease;
+}
+
+.lp-error svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+@keyframes lp-shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-4px);
+    }
+
+    40% {
+        transform: translateX(4px);
+    }
+
+    60% {
+        transform: translateX(-3px);
+    }
+
+    80% {
+        transform: translateX(3px);
+    }
+}
+
+/* ---------- Primary button ---------- */
+.lp-btn {
+    width: 100%;
+    padding: 0.78rem;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 18px rgba(99, 102, 241, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    letter-spacing: 0.01em;
+}
+
+.lp-btn:hover:not(:disabled) {
+    opacity: 0.92;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(99, 102, 241, 0.55);
+}
+
+.lp-btn:active:not(:disabled) {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.lp-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Spinner inside button */
+.lp-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2.5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: lp-spin 0.7s linear infinite;
+}
+
+@keyframes lp-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---------- Divider ---------- */
+.lp-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.4rem 0 1rem;
+    color: #374151;
+    font-size: 0.78rem;
+}
+
+.lp-divider::before,
+.lp-divider::after {
+    content: '';
+    flex: 1;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.lp-divider span {
+    color: #6b7280;
+    white-space: nowrap;
+}
+
+/* ---------- Social buttons ---------- */
+.lp-socials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.4rem;
+}
+
+.lp-social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.65rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #d1d5db;
+    font-size: 0.82rem;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.lp-social-btn:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #f9fafb;
+}
+
+.lp-social-btn svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* ---------- Sign-up link ---------- */
+.lp-signup-link {
+    text-align: center;
+    font-size: 0.82rem;
+    color: #6b7280;
+}
+
+.lp-signup-link a {
+    color: #818cf8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.lp-signup-link a:hover {
+    color: #a5b4fc;
+}
+
+/* ---------- Success state ---------- */
+.lp-success-card {
+    text-align: center;
+    padding: 3rem 2.25rem;
+}
+
+.lp-success-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    box-shadow: 0 6px 28px rgba(99, 102, 241, 0.5);
+    animation: lp-pop 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes lp-pop {
+    from {
+        transform: scale(0.4);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.lp-success-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #f1f1f5;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.4rem;
+}
+
+.lp-success-sub {
+    color: #6b7280;
+    font-size: 0.875rem;
+    margin-bottom: 1.75rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+    .lp-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .lp-socials {
+        grid-template-columns: 1fr;
+    }
+}
