@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: radial-gradient(ellipse at top, #1a1a3e 0%, #0f0f1a 60%);
+}
+
+/* ── Header ── */
+.app-header {
+    width: 100%;
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    height: 72px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 20px rgba(100, 108, 255, 0.5));
+    animation: spin 8s linear infinite;
+    transition: filter 0.3s;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 32px rgba(100, 108, 255, 0.9));
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.app-header h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff 30%, #646cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.4rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+}
+
+/* ── Main ── */
+.app-main {
+    flex: 1;
+    width: 100%;
+    max-width: 900px;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* ── Counter Card ── */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2.5rem 3rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 420px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+
+.card button {
+    background: linear-gradient(135deg, var(--primary), #a855f7);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.85rem 2.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: var(--font);
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(100, 108, 255, 0.35);
+    margin-bottom: 1rem;
+}
+
+.card button:hover {
+    opacity: 0.9;
+    transform: scale(1.04);
+    box-shadow: 0 8px 32px rgba(168, 85, 247, 0.45);
+}
+
+.card button:active {
+    transform: scale(0.97);
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ── Info Grid ── */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.4rem;
+    width: 100%;
+}
+
+.info-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.6rem;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    cursor: default;
+}
+
+.info-card:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+}
+
+.info-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    color: var(--text);
+}
+
+.info-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* ── Footer ── */
+.app-footer {
+    width: 100%;
+    padding: 1.4rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.015);
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.app-footer code {
+    background: rgba(100, 108, 255, 0.15);
+    color: #a5b0ff;
+    padding: 0.15em 0.4em;
+    border-radius: 5px;
+    font-size: 0.88em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    .app-header {
+        padding: 2rem 1rem 1.5rem;
+    }
+
+    .card {
+        padding: 2rem 1.5rem;
+    }
+}
