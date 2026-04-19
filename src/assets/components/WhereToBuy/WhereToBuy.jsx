@@ -1,4 +1,5 @@
 import React from "react";
+import WorldMap from "../../world map.WEBP";
 const WhereToBuy = () => {
   return (
     <div className="container mx-auto px-4 py-16">
@@ -45,10 +46,9 @@ const WhereToBuy = () => {
         {/* Map section */}
         <div className="flex justify-center items-center">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/World_map_blank_without_borders.svg/1000px-World_map_blank_without_borders.svg.png"
+            src={WorldMap}
             alt="World Map"
-            className="w-full max-w-[500px] opacity-20 filter grayscale"
-            style={{ objectFit: 'contain' }}
+            className="w-full sm:w-[500px] mx-auto"
           />
         </div>
       </div>
