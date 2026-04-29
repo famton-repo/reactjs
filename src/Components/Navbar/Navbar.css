@@ -1,0 +1,46 @@
+.navbar{
+    padding: 30px;
+    padding-inline: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+.navbar .link ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+
+    
+}
+.navbar .link ul li{
+    font-size:18px;
+    font-weight:600;
+
+}
+.nav_icon_wrapper{
+    display:flex;
+
+}
+.nav_cart{
+    display:flex;
+    position:relative;
+    cursor:pointer;
+}
+.nav_icon{
+    font-size:34px;
+    margin-left:35px;
+}
+.cart_qty{
+    position:absolute;
+    background-color: red;
+    color: white;
+    right:-8px;
+    font-size: 12px;
+    height:20px;
+    width:20px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+top: -10px;
+
+}
