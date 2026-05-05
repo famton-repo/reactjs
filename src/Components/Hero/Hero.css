@@ -1,0 +1,40 @@
+.hero{
+    display: flex;
+    padding-inline: 100px;
+    gap: 20px;
+    justify-content: space-between;
+
+}
+.hero_left{
+    max-width: 50%;
+    margin-top: 120px;
+
+
+}
+.hero_left h2{
+    font-size: 65px;
+}
+.hero_left p{
+    margin-top:15px;
+    font-size: 20px;
+    color:  #666;
+}
+.hero_left button{
+    padding:1.2rem 3.5rem;
+    border:none;
+background-color: red;
+color:white;
+margin-top: 20px;
+border-radius:10px;
+
+}
+.hero_right{
+    max-width: 50%;
+
+
+}
+.hero_right img{
+    width: 640px;
+    height: 570px;
+    object-fit: contain;
+}
