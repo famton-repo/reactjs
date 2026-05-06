@@ -5,19 +5,19 @@ import coffee2 from '../../Coffee/coffee2.png'
 import coffee3 from '../../Coffee/coffee3.png'
 const servicesData = [
     {
-        id:1,
+        id: 1,
         image: coffee1,
         title: "Black Coffee",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ullam."
     },
     {
-        id:2,
+        id: 2,
         image: coffee3,
         title: "Cold Coffee",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ullam."
     },
     {
-        id:3,
+        id: 3,
         image: coffee1,
         title: "Cold Coffee",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ullam."
@@ -64,10 +64,24 @@ const Services = () => {
             {/* header section */}
 
             <div className='text-center max-w-lg mx-auto space-y-2'>
-                <motion.h1 initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", stiffness: 150, damping: 10, delay: 0.2 }} className='text-3xl font-bold text-lightGray'>
+                <motion.h1
+                    initial={{ opacity: 0, y: 100 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ type: "spring", stiffness: 150, damping: 10, delay: 0.2 }}
+                    className='text-3xl font-bold text-lightGray'
+                >
                     Fresh and <span className='text-primary'>Tasty Coffee</span>
                 </motion.h1>
-                <motion.p initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: "spring", stiffness: 150, damping: 10, delay: 0.6 }} className='text-sm opacity-50'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ullam.</motion.p>
+                <motion.p
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ type: "spring", stiffness: 150, damping: 10, delay: 0.4 }}
+                    className='text-sm opacity-50'
+                >
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, ullam.
+                </motion.p>
             </div>
 
 
@@ -75,15 +89,15 @@ const Services = () => {
 
             {/* card section */}
 
-            <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{amount: 0.8}} className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
+            <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
                 {servicesData.map((service) => (
-                     <motion.div variants={cardVariants} className='text-center p-4 space-y-6'>
+                    <motion.div variants={cardVariants} className='text-center p-4 space-y-6'>
                         <img src={service.image} alt={service.title} className='img-shadow2 max-w-[200px] mx-auto hover:scale-110 duration-300 cursor-pointer' />
                         <div className="spacy">
                             <h1 className='text-2xl font-bold text-primary'>{service.title}</h1>
-                        <p className='text-darkGray'>{service.description}</p>
+                            <p className='text-darkGray'>{service.description}</p>
                         </div>
-                        
+
                     </motion.div>
                 ))}
             </motion.div>
